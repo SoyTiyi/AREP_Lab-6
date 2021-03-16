@@ -27,12 +27,10 @@ public class SecureURL {
         sslContext.init(null, tmf.getTrustManagers(), null);
         SSLContext.setDefault(sslContext);
         javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier((hostname, sslSession) -> true);
-        readURL("https://localhost:5000/hello");
-        readURL("https://www.google.com");
     }
 
-    private static void readURL(String url) throws Exception{
-        URL siteURL = new URL(url);
+    public static String readURL() throws Exception{
+        URL siteURL = new URL("https://localhost:5001/respuesta");
         URLConnection urlConnection = siteURL.openConnection();
         Map<String, List<String>> headers = urlConnection.getHeaderFields();
         Set<Map.Entry<String, List<String>>> entrySet = headers.entrySet();
@@ -56,5 +54,6 @@ public class SecureURL {
         } catch (IOException x) {
             System.err.println(x);
         }
+        return null;
     }
 }
