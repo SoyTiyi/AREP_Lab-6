@@ -70,7 +70,7 @@ public class SparkWebServer {
 				request.session().attribute("User", currentUser.getEmail());
 				request.session().attribute("isLogged", true);
 			}
-			return "ok";
+			return "Skere";
 		});
         /* get("/hello", (req, res) -> "Hello World"); */
     }
