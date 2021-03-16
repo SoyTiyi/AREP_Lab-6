@@ -2,10 +2,10 @@ const app = (() => {
 
     const post = (callBack) => {
         const promise = $.get({
-            url: "/conexion"
+            url: "/conection"
         }).then(data => {
             console.log(data)
-            callBack(data);
+            callBack(JSON.stringify(data));
         }).catch(
             error => {
                 console.log(`Error : ${error}`);

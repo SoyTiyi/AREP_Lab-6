@@ -67,6 +67,7 @@ public class SparkWebServer {
 			if (currentUser.getPassword().equals(users.get(currentUser.getEmail()))) {
 				request.session().attribute("User", currentUser.getEmail());
 				request.session().attribute("isLogged", true);
+				return "logged";
 			}
 			return "Skere";
 		});

@@ -2,7 +2,7 @@ const app = (() => {
     const login = () => {
 
         const email = $("#email").val();
-        const password = $("#password").vale();
+        const password = $("#password").val();
 
         const promise = $.post({
             url: "/login",

@@ -7,7 +7,7 @@ public class SparkWebServer {
     public static void main(String[] args) {
 		port(getPort());
 		port(getPort());
-		secure("keystores/ecikeystore.p12", "Hola123", "keystores/myTrustStoreLogin", "Hola123");
+		secure("keystores/ecikeystore.p12", "123456", null, null);
 		get("/respuesta",(request, response) -> {
 			System.out.println("Llegue");
 			return "<h4>Conectado Bro</h4>"; 
