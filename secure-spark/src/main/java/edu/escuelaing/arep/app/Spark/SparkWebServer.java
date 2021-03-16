@@ -62,8 +62,6 @@ public class SparkWebServer {
 		}));
 
         post("/login", (request, response) -> {
-
-			System.out.println(request.body());
 			request.session(true);
 			User currentUser = gson.fromJson(request.body(), User.class);
 			if (currentUser.getPassword().equals(users.get(currentUser.getEmail()))) {
